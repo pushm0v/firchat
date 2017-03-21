@@ -15,5 +15,6 @@ struct ColorPalette {
     static let coral = UIColor(red: 244, green: 111, blue: 96)
     static let whiteSmoke = UIColor(red: 245, green: 245, blue: 245)
     static let grayChateau = UIColor(red: 163, green: 164, blue: 168)
-    
+    static let blueNavigation = UIColor(red: 74, green: 144, blue: 226)
+    static let greyNavigation = UIColor(red: 214, green: 229, blue: 248)
 }

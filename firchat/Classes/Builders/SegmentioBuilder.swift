@@ -26,7 +26,7 @@ class SegmentioBuilder: ISegmentioBuilder {
         segmentioView.setup(
             content: segmentioContent(contents: contents),
             style: segmentioStyle,
-            options: segmentioOptions(segmentioStyle: segmentioStyle)
+            options: segmentioOptions(segmentioStyle: segmentioStyle, maxVisibleItems: contents.count)
         )
     }
     
@@ -40,7 +40,7 @@ class SegmentioBuilder: ISegmentioBuilder {
         return contentsToReturn
     }
     
-    private static func segmentioOptions(segmentioStyle: SegmentioStyle) -> SegmentioOptions {
+    private static func segmentioOptions(segmentioStyle: SegmentioStyle, maxVisibleItems: Int) -> SegmentioOptions {
         var imageContentMode = UIViewContentMode.center
         switch segmentioStyle {
         case .imageBeforeLabel, .imageAfterLabel:
@@ -50,12 +50,12 @@ class SegmentioBuilder: ISegmentioBuilder {
         }
         
         return SegmentioOptions(
-            backgroundColor: ColorPalette.white,
-            maxVisibleItems: 3,
+            backgroundColor: ColorPalette.blueNavigation,
+            maxVisibleItems: maxVisibleItems,
             scrollEnabled: true,
             indicatorOptions: segmentioIndicatorOptions(),
-            horizontalSeparatorOptions: segmentioHorizontalSeparatorOptions(),
-            verticalSeparatorOptions: segmentioVerticalSeparatorOptions(),
+            horizontalSeparatorOptions: nil,
+            verticalSeparatorOptions: nil,
             imageContentMode: imageContentMode,
             labelTextAlignment: .center,
             labelTextNumberOfLines: 1,
@@ -65,22 +65,23 @@ class SegmentioBuilder: ISegmentioBuilder {
     }
     
     private static func segmentioStates() -> SegmentioStates {
-        let font = UIFont.systemFont(ofSize: 12)
+        let font = UIFont.systemFont(ofSize: 14)
+        let fontBold = UIFont.boldSystemFont(ofSize: 14)
         return SegmentioStates(
             defaultState: segmentioState(
-                backgroundColor: .clear,
+                backgroundColor: ColorPalette.blueNavigation,
                 titleFont: font,
-                titleTextColor: ColorPalette.grayChateau
+                titleTextColor: ColorPalette.white
             ),
             selectedState: segmentioState(
-                backgroundColor: .cyan,
-                titleFont: font,
-                titleTextColor: ColorPalette.black
+                backgroundColor: ColorPalette.blueNavigation,
+                titleFont: fontBold,
+                titleTextColor: ColorPalette.greyNavigation
             ),
             highlightedState: segmentioState(
-                backgroundColor: ColorPalette.whiteSmoke,
+                backgroundColor: ColorPalette.blueNavigation,
                 titleFont: font,
-                titleTextColor: ColorPalette.grayChateau
+                titleTextColor: ColorPalette.white
             )
         )
     }

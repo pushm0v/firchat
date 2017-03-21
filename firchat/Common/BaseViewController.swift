@@ -67,7 +67,7 @@ class BaseViewController: UIViewController, IBaseViewController {
             button5.setTitle("Button 5", for: UIControlState.normal)
             titleView.addSubview(button5)
             
-            navBar.navigationBar.barTintColor = UIColor.blue
+            navBar.navigationBar.barTintColor = ColorPalette.blueNavigation
             navBar.navigationBar.topItem?.titleView = titleView
         }
     }

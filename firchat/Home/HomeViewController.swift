@@ -38,8 +38,10 @@ class HomeViewController: BaseViewController {
     
     func setupSegmentedMenu() {
         SegmentioBuilder.buildSegmentioView(segmentioView: segmentioView, segmentioStyle: .onlyLabel, contents: [
-            (title: "1", image: nil),
-            (title: "2", image: nil)
+            (title: "OFFERS", image: nil),
+            (title: "BID", image: nil),
+            (title: "LOOKING", image: nil),
+            (title: "SERVICE", image: nil)
             ])
         
         segmentioView.valueDidChange = { [weak self] _, segmentIndex in
