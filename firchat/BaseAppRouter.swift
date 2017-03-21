@@ -14,13 +14,13 @@ public protocol IProductRouter : class {
 }
 
 public class BaseAppRouter : IAppRouter {
-    private let rootVC:UIViewController!
+//    private let rootVC:UIViewController!
     private let assembler:Assembler!
     private let products : [String:(_ appRouter:IAppRouter)->IProductRouter]
     private let navigationController:UINavigationController?
     
-    init(rootVC:UIViewController, navigationController:UINavigationController?, assembler:Assembler, products:[String:(_ appRouter:IAppRouter)->IProductRouter]){
-        self.rootVC = rootVC
+    init(navigationController:UINavigationController?, assembler:Assembler, products:[String:(_ appRouter:IAppRouter)->IProductRouter]){
+//        self.rootVC = rootVC
         self.navigationController = navigationController
         self.assembler = assembler
         self.products = products
@@ -42,11 +42,13 @@ public class BaseAppRouter : IAppRouter {
     }
     
     public func displayView(view:UIViewController?, animateDismiss:Bool, animateDisplay:Bool, completion:(() -> Void)?){
-        rootVC.dismiss(animated: animateDismiss, completion: {() in
-            if(view != nil){
-                self.rootVC.present(view!, animated: animateDisplay, completion: completion)
+        navigationController?.popViewController(animated: animateDismiss)
+        if let view = view {
+            navigationController?.pushViewController(view, animated: animateDisplay)
+            if let completion = completion {
+                completion()
             }
-        })
+        }
     }
     
     public func displayViewWithoutDismiss(view:UIViewController?,animateDisplay:Bool) {
@@ -59,35 +61,15 @@ public class BaseAppRouter : IAppRouter {
     }
     
     public func presentViewModally(view: UIViewController) {
-        rootVC.present(view, animated: true, completion: nil)
+        navigationController?.present(view, animated: true, completion: nil)
     }
     
     public func presentView(view: UIViewController) {
-        // Top most VC
-        var vc: UIViewController? = rootVC
-        while vc != nil {
-            if let next = vc?.presentedViewController {
-                vc = next
-            } else {
-                break
-            }
-        }
-        
-        if let navController = vc as? UINavigationController {
-            navController.pushViewController(view, animated: true)
-        }
+        navigationController?.pushViewController(view, animated: true)
     }
     
     public func dismissView() {
-        var vc: UIViewController? = rootVC
-        while vc != nil {
-            if let next = vc?.presentedViewController {
-                vc = next
-            } else {
-                break
-            }
-        }
-        vc?.dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
     }
     
     public func presentRoutePath(routePath: String, parameters: [String:AnyObject]) {

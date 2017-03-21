@@ -26,19 +26,15 @@ class AppRouter: BaseAppRouter {
     static let sharedInstance = AppRouter.createAppRouter()
     
     private static func createAppRouter() -> AppRouter {
-        let rootVC = UIApplication.shared.delegate!.window!!.rootViewController!
+        let rootVC = UIApplication.shared.delegate!.window!!.rootViewController! as? UINavigationController
         
-        let navController = { () -> UINavigationController in
-            let nav = UINavigationController()
-            return nav
-        }()
         let assembler = Assembler()
         assembler.apply(assemblies: [CommonAssembly(),HomeAssembly()])
         
         let products: [String: (_ appRouter: IAppRouter) -> IProductRouter] = [
             Products.FIRChatProduct.productName: { FIRChatRouter(router: $0) }
         ]
-        let router = AppRouter(rootVC: rootVC, navigationController: navController, assembler: assembler, products: products)
+        let router = AppRouter(navigationController: rootVC, assembler: assembler, products: products)
         return router
     }
 }

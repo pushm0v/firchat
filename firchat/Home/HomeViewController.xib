@@ -5,14 +5,14 @@
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11762"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="firchat" customModuleProvider="target">
             <connections>
+                <outlet property="childView" destination="EaT-kO-jyf" id="28d-nw-BnD"/>
                 <outlet property="segmentioView" destination="k1A-2k-czz" id="1Dv-rN-Cgr"/>
-                <outlet property="tableView" destination="sPv-z9-ryH" id="4UW-tf-eVQ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -21,32 +21,30 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sPv-z9-ryH">
-                    <rect key="frame" x="0.0" y="123" width="375" height="544"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <connections>
-                        <outlet property="dataSource" destination="-1" id="2vd-YZ-zIa"/>
-                        <outlet property="delegate" destination="-1" id="jhE-sD-PMN"/>
-                    </connections>
-                </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k1A-2k-czz" customClass="Segmentio" customModule="Segmentio">
-                    <rect key="frame" x="0.0" y="65" width="375" height="50"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="PHd-YZ-6Zu"/>
                     </constraints>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EaT-kO-jyf">
+                    <rect key="frame" x="0.0" y="58" width="375" height="609"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="k1A-2k-czz" secondAttribute="trailing" id="CUm-XP-H5H"/>
-                <constraint firstItem="sPv-z9-ryH" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="H8p-K8-BxD"/>
-                <constraint firstItem="k1A-2k-czz" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="65" id="Odp-dG-49t"/>
+                <constraint firstItem="k1A-2k-czz" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Odp-dG-49t"/>
                 <constraint firstItem="k1A-2k-czz" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="TR6-u5-WoQ"/>
-                <constraint firstAttribute="bottom" secondItem="sPv-z9-ryH" secondAttribute="bottom" id="bfl-hU-bgk"/>
-                <constraint firstAttribute="trailing" secondItem="sPv-z9-ryH" secondAttribute="trailing" id="ebC-w0-CSY"/>
-                <constraint firstItem="sPv-z9-ryH" firstAttribute="top" secondItem="k1A-2k-czz" secondAttribute="bottom" constant="8" id="mTr-V4-4wN"/>
+                <constraint firstAttribute="bottom" secondItem="EaT-kO-jyf" secondAttribute="bottom" id="XIc-Q2-pLh"/>
+                <constraint firstItem="EaT-kO-jyf" firstAttribute="top" secondItem="k1A-2k-czz" secondAttribute="bottom" constant="8" id="g3L-eN-rbp"/>
+                <constraint firstItem="EaT-kO-jyf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="nP6-Pu-4ej"/>
+                <constraint firstAttribute="trailing" secondItem="EaT-kO-jyf" secondAttribute="trailing" id="nXN-j1-SNU"/>
             </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
             <point key="canvasLocation" x="33.5" y="53.5"/>
         </view>
     </objects>

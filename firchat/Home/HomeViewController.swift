@@ -15,8 +15,8 @@ protocol IHomeView: class {
 
 class HomeViewController: BaseViewController {
 
-    @IBOutlet weak var tableView: UITableView?
     @IBOutlet weak var segmentioView: Segmentio!
+    @IBOutlet weak var childView: UIView?
     
     var presenter: IHomePresenter!
     
@@ -31,28 +31,20 @@ class HomeViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupTableView()
-//        presenter.populateMenus()
         self.setupDefaultNavigationBar(activeMenu: .Home)
         self.showFABButton(show: true)
         self.setupSegmentedMenu()
     }
     
-    func setupTableView() {
-        tableView?.register(UINib(nibName: "HomeMenuCell", bundle: nil), forCellReuseIdentifier: "HomeMenuCell")
-    }
-    
     func setupSegmentedMenu() {
-        let segmentioItem: [SegmentioItem] = [
-            SegmentioItem(title: "asdfasdf", image: nil),
-            SegmentioItem(title: "asdfasdf 2", image: nil)
-        ]
-        let segmentioOptions: SegmentioOptions = SegmentioOptions()
-        segmentioView.setup(
-            content: segmentioItem,
-            style: SegmentioStyle.onlyLabel,
-            options: segmentioOptions
-        )
+        SegmentioBuilder.buildSegmentioView(segmentioView: segmentioView, segmentioStyle: .onlyLabel, contents: [
+            (title: "1", image: nil),
+            (title: "2", image: nil)
+            ])
+        
+        segmentioView.valueDidChange = { [weak self] _, segmentIndex in
+            print(segmentIndex)
+        }
     }
 }
 

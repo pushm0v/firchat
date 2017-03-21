@@ -29,6 +29,9 @@
 		F72AFCFF1E801CD4003BE82A /* HomeWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72AFCF61E801CD4003BE82A /* HomeWireframe.swift */; };
 		F72AFD011E801DC0003BE82A /* HomeAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72AFD001E801DC0003BE82A /* HomeAssembly.swift */; };
 		F72AFD051E80C608003BE82A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72AFD041E80C608003BE82A /* BaseViewController.swift */; };
+		F72AFD0C1E81250B003BE82A /* SegmentioBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72AFD0B1E81250B003BE82A /* SegmentioBuilder.swift */; };
+		F72AFD0F1E81324B003BE82A /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72AFD0E1E81324B003BE82A /* ColorPalette.swift */; };
+		F72AFD121E813587003BE82A /* UIColor+RGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72AFD111E813587003BE82A /* UIColor+RGB.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +61,9 @@
 		F72AFCF61E801CD4003BE82A /* HomeWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeWireframe.swift; sourceTree = "<group>"; };
 		F72AFD001E801DC0003BE82A /* HomeAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeAssembly.swift; sourceTree = "<group>"; };
 		F72AFD041E80C608003BE82A /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = Common/BaseViewController.swift; sourceTree = "<group>"; };
+		F72AFD0B1E81250B003BE82A /* SegmentioBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SegmentioBuilder.swift; path = Classes/Builders/SegmentioBuilder.swift; sourceTree = "<group>"; };
+		F72AFD0E1E81324B003BE82A /* ColorPalette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorPalette.swift; path = Classes/Assets/ColorPalette.swift; sourceTree = "<group>"; };
+		F72AFD111E813587003BE82A /* UIColor+RGB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+RGB.swift"; path = "Classes/Extensions/UIColor+RGB.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +138,9 @@
 		F72AFCDF1E7FF265003BE82A /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				F72AFD101E813571003BE82A /* Extensions */,
+				F72AFD0D1E81321E003BE82A /* Assets */,
+				F72AFD0A1E8124E6003BE82A /* Builders */,
 				F72AFCEB1E801CBE003BE82A /* Modules */,
 				F72AFCE01E7FF26C003BE82A /* Common */,
 			);
@@ -183,6 +192,30 @@
 			);
 			name = Views;
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		F72AFD0A1E8124E6003BE82A /* Builders */ = {
+			isa = PBXGroup;
+			children = (
+				F72AFD0B1E81250B003BE82A /* SegmentioBuilder.swift */,
+			);
+			name = Builders;
+			sourceTree = "<group>";
+		};
+		F72AFD0D1E81321E003BE82A /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				F72AFD0E1E81324B003BE82A /* ColorPalette.swift */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		F72AFD101E813571003BE82A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F72AFD111E813587003BE82A /* UIColor+RGB.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,9 +345,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F72AFD0F1E81324B003BE82A /* ColorPalette.swift in Sources */,
 				F72AFCEA1E7FF2AC003BE82A /* FIRChatRouter.swift in Sources */,
 				F72AFCE91E7FF2AC003BE82A /* Modules.swift in Sources */,
 				F72AFCC91E7FEFEA003BE82A /* AppDelegate.swift in Sources */,
+				F72AFD0C1E81250B003BE82A /* SegmentioBuilder.swift in Sources */,
 				F72AFCE81E7FF2AC003BE82A /* CommonAssembly.swift in Sources */,
 				F72AFCFF1E801CD4003BE82A /* HomeWireframe.swift in Sources */,
 				F72AFD051E80C608003BE82A /* BaseViewController.swift in Sources */,
@@ -323,6 +358,7 @@
 				F72AFCE61E7FF2AC003BE82A /* AppRouter.swift in Sources */,
 				F72AFCF71E801CD4003BE82A /* HomeMenuCell.swift in Sources */,
 				F72AFCFA1E801CD4003BE82A /* HomeModule.swift in Sources */,
+				F72AFD121E813587003BE82A /* UIColor+RGB.swift in Sources */,
 				F72AFCE71E7FF2AC003BE82A /* BaseAppRouter.swift in Sources */,
 				F72AFCF91E801CD4003BE82A /* HomeMenu.swift in Sources */,
 				F72AFCFC1E801CD4003BE82A /* HomePresenter.swift in Sources */,
