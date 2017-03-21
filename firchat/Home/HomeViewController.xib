@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="firchat" customModuleProvider="target">
+            <connections>
+                <outlet property="segmentioView" destination="k1A-2k-czz" id="1Dv-rN-Cgr"/>
+                <outlet property="tableView" destination="sPv-z9-ryH" id="4UW-tf-eVQ"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sPv-z9-ryH">
+                    <rect key="frame" x="0.0" y="123" width="375" height="544"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="2vd-YZ-zIa"/>
+                        <outlet property="delegate" destination="-1" id="jhE-sD-PMN"/>
+                    </connections>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k1A-2k-czz" customClass="Segmentio" customModule="Segmentio">
+                    <rect key="frame" x="0.0" y="65" width="375" height="50"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="PHd-YZ-6Zu"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="k1A-2k-czz" secondAttribute="trailing" id="CUm-XP-H5H"/>
+                <constraint firstItem="sPv-z9-ryH" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="H8p-K8-BxD"/>
+                <constraint firstItem="k1A-2k-czz" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="65" id="Odp-dG-49t"/>
+                <constraint firstItem="k1A-2k-czz" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="TR6-u5-WoQ"/>
+                <constraint firstAttribute="bottom" secondItem="sPv-z9-ryH" secondAttribute="bottom" id="bfl-hU-bgk"/>
+                <constraint firstAttribute="trailing" secondItem="sPv-z9-ryH" secondAttribute="trailing" id="ebC-w0-CSY"/>
+                <constraint firstItem="sPv-z9-ryH" firstAttribute="top" secondItem="k1A-2k-czz" secondAttribute="bottom" constant="8" id="mTr-V4-4wN"/>
+            </constraints>
+            <point key="canvasLocation" x="33.5" y="53.5"/>
+        </view>
+    </objects>
+</document>
